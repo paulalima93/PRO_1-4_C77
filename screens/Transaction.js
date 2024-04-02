@@ -12,9 +12,10 @@ import {
 import * as Permissions from "expo-permissions";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import db from "../config";
-import firebase from "firebase";
-
-import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+//import firebase from "firebase";
+import firebase from "firebase/compat/app";
+// Required for side-effects
+import "firebase/firestore";
 
 const bgImage = require("../assets/background2.png");
 const appIcon = require("../assets/appIcon.png");

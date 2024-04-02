@@ -1,13 +1,27 @@
-import firebase from 'firebase';
+import firebase from "firebase/compat/app";
+// Required for side-effects
+import "firebase/firestore";
+import { initializeApp } from 'firebase/app';
 
+// Optionally import the services that you want to use
+// import {...} from "firebase/auth";
+// import {...} from "firebase/database";
+// import {...} from "firebase/firestore";
+// import {...} from "firebase/functions";
+// import {...} from "firebase/storage";
+
+// Initialize Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyDyusKFf6iTgLYhgrwIel_BcsXub1QaUKE",
-    authDomain: "biblioteca-eletronica-3dcf5.firebaseapp.com",
-    projectId: "biblioteca-eletronica-3dcf5",
-    storageBucket: "biblioteca-eletronica-3dcf5.appspot.com",
-    messagingSenderId: "247534865440",
-    appId: "1:247534865440:web:dc8a15152a62918df24045"
-  };
+  apiKey: 'api-key',
+  authDomain: 'project-id.firebaseapp.com',
+  databaseURL: 'https://project-id.firebaseio.com',
+  projectId: 'project-id',
+  storageBucket: 'project-id.appspot.com',
+  messagingSenderId: 'sender-id',
+  appId: 'app-id',
+  measurementId: 'G-measurement-id',
+};
 
-firebase.initializeApp(firebaseConfig);
-export default firebase.firestore()
+const app = initializeApp(firebaseConfig);
+// For more information on how to access Firebase in your project,
+// see the Firebase documentation: https://firebase.google.com/docs/web/setup#access-firebase
